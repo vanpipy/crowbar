@@ -4,7 +4,8 @@
   "description": "just crowbar the applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "lerna boostrap",
+    "uninstall": "lerna clean -y"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
     "url": "https://github.com/vanpipy/crowbar/issues"
   },
   "homepage": "https://github.com/vanpipy/crowbar#readme",
-  "dependencies": {
+  "devDependencies": {
+    "husky": "^7.0.4",
     "lerna": "^4.0.0"
   }
 }

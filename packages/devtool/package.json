@@ -1,0 +1,61 @@
+{
+  "name": "@crowbar/devtool",
+  "version": "0.0.1",
+  "description": "crowbar the application of the development",
+  "keywords": [
+    "crowbar",
+    "dev",
+    "app"
+  ],
+  "author": "vanpipy",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/devApp#readme",
+  "license": "MIT",
+  "bin": "bin/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpipy/crowbar.git"
+  },
+  "scripts": {
+    "test": "node scripts/testRunner.js",
+    "prepare": "cd ../../ && husky install ./packages/devtool/.husky",
+    "lint": "eslint lib --ext .ts"
+  },
+  "bugs": {
+    "url": "https://github.com/vanpipy/crowbar/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@crowbar/eslint-config-typescript": "^0.1.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.10",
+    "@types/sinon": "^10.0.11",
+    "@types/webpack": "^5.28.0",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "chai": "^4.3.6",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "fast-glob": "^3.2.11",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "mocha": "^9.2.1",
+    "sinon": "^13.0.1",
+    "ts-node": "^10.4.0",
+    "typescript": "4.5.5"
+  },
+  "dependencies": {
+    "webpack": "^5.66.0",
+    "webpack-merge": "^5.8.0",
+    "winston": "^3.6.0"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  }
+}
