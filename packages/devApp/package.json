@@ -1,0 +1,31 @@
+{
+  "name": "crowbar-dev-app",
+  "version": "0.0.1",
+  "description": "crowbar the application of the development",
+  "keywords": [
+    "crowbar",
+    "dev",
+    "app"
+  ],
+  "author": "fanjingang001 <fanjingang001@bkjk.com>",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/devApp#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpipy/crowbar.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vanpipy/crowbar/issues"
+  }
+}
