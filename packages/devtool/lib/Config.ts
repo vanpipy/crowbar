@@ -1,16 +1,18 @@
 import { Configuration } from 'webpack';
 
 interface Options extends Configuration {
-      filename?: string;
-    cwd?: string
+  crowbar?: {
+    cwd?: string;
+    filename?: string;
+  };
 }
 
 class Config {
   private options: Options;
 
   constructor(opt: Options = {}) {
-    const { cwd = process.cwd(), ...rest } = opt;
-    this.options = { ...rest, cwd };
+    const { crowbar, ...rest } = opt;
+    this.options = { ...rest, crowbar };
   }
 
   getOptions() {

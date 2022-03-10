@@ -4,7 +4,7 @@
   "description": "just crowbar the applications",
   "main": "index.js",
   "scripts": {
-    "install": "lerna boostrap",
+    "install": "lerna bootstrap",
     "uninstall": "lerna clean -y"
   },
   "repository": {

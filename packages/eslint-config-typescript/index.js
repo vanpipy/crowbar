@@ -3,18 +3,9 @@ module.exports = {
     node: true,
     es6: true,
   },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-    project: './tsconfig.json'
-  },
-  plugins: [
-    '@typescript-eslint',
-    'prettier'
-  ],
+  plugins: ['prettier'],
   extends: [
-    'standard-with-typescript',
+    'standard',
     'prettier'
   ],
   rules: {
@@ -22,6 +13,23 @@ module.exports = {
       singleQuote: true,
       printWidth: 100
     }],
-    '@typescript-eslint/explicit-function-return-type': 'off'
-  }
+  },
+  overrides: [
+    {
+      files: ['*.ts'],
+      extends: [
+        'standard-with-typescript',
+        'prettier'
+      ],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 6,
+        sourceType: 'module',
+        project: './tsconfig.json'
+      },
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off'
+      }
+    }
+  ]
 }
