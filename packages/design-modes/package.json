@@ -1,0 +1,29 @@
+{
+  "name": "@crowbar/design-modes",
+  "version": "0.1.0",
+  "description": "design mode implement",
+  "keywords": [
+    "design",
+    "implement"
+  ],
+  "author": "vanpipy <vanpipy@gmail.com>",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/design-modes#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpipy/crowbar.git"
+  },
+  "scripts": {
+    "test": "mocha --require ts-node/register 'lib/*.spec.*'"
+  },
+  "bugs": {
+    "url": "https://github.com/vanpipy/crowbar/issues"
+  }
+}
