@@ -1,0 +1,57 @@
+@startuml
+left to right direction
+
+class Config {
+    private Hash option
+    json readRepoConfig()
+    void mergeReporConfig()
+}
+
+class Bundler {
+    Webpack compiler
+    Hash config
+    void compile()
+}
+
+class Server {
+    Bundler bundler
+    Hash config
+    void serve()
+}
+
+class Health {
+    Hash report
+    void scan()
+    void diagnose()
+}
+
+class TypesGenerator {
+    string dir
+    void generate()
+}
+
+class Commander {
+    void distribute()
+    void serve()
+    void bundle()
+    void diagnose()
+    void typesGenerate()
+}
+
+interface Crowbar {
+    Commander devtool
+}
+
+Config --> Bundler::config
+Health::diagnose --> Commander::diagnose
+TypesGenerator::generate --> Commander::typesGenerate
+
+<> dot
+
+Bundler -- dot
+Server -- dot
+
+dot --* Commander
+Commander --* Crowbar
+
+@enduml
