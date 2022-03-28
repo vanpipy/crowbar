@@ -1,6 +1,6 @@
 {
-  "name": "@crowbar/design-modes",
-  "version": "0.1.0",
+  "name": "crowbar-design-modes",
+  "version": "0.1.1",
   "description": "design mode implement",
   "keywords": [
     "design",
@@ -9,21 +9,27 @@
   "author": "vanpipy <vanpipy@gmail.com>",
   "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/design-modes#readme",
   "license": "MIT",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "files": [
-    "lib"
+    "lib",
+    "esm"
   ],
+  "main": "lib/index.js",
+  "module": "esm/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vanpipy/crowbar.git"
   },
   "scripts": {
-    "test": "mocha --require ts-node/register 'lib/*.spec.*'"
+    "test": "mocha --require ts-node/register 'lib/*.spec.*'",
+    "build:cjs": "tsc -p ./tsconfig-cjs.json",
+    "build:es": "tsc -p ./tsconfig-esm.json",
+    "build": "npm run build:cjs && npm run build:es"
   },
   "bugs": {
     "url": "https://github.com/vanpipy/crowbar/issues"
+  },
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
   }
 }
