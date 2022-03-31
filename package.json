@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vanpipy/crowbar#readme",
   "dependencies": {
+    "@changesets/cli": "^2.22.0",
     "lerna": "^4.0.0"
   },
   "devDependencies": {
