@@ -1,4 +1,16 @@
-type Processor = (value?: any) => Promise<any> | any;
+type Mixed =
+  | string
+  | number
+  | boolean
+  | undefined
+  | null
+  | object
+  | string[]
+  | number[]
+  | boolean[]
+  | object[];
+
+type Processor = (value?: Mixed) => Promise<Mixed> | Mixed;
 
 class BehaviorChain {
   private queues: Processor[] = [];
@@ -13,15 +25,15 @@ class BehaviorChain {
   }
 
   destroy() {
-    this.queues.length = 0
+    this.queues.length = 0;
   }
 }
 
-function createRunner (processors: Processor[]) {
-  let result: any;
+function createRunner(processors: Processor[]) {
+  let result: Mixed;
   const gen = runner();
 
-  function *runner() {
+  function* runner() {
     const l = processors.length;
     let i = 0;
 
@@ -38,7 +50,7 @@ function createRunner (processors: Processor[]) {
     }
   }
 
-  function run(): any {
+  function run(): Promise<Mixed> {
     const { done, value } = gen.next();
 
     if (value instanceof Error) {
@@ -51,10 +63,10 @@ function createRunner (processors: Processor[]) {
 
     return Promise.resolve(value).then((latest) => {
       if (done === false) {
-        result = latest;
+        result = latest as Mixed;
         return run();
       }
-    })
+    });
   }
 
   return run;

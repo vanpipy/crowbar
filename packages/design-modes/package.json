@@ -31,5 +31,8 @@
   "types": "./lib/index.d.ts",
   "directories": {
     "lib": "lib"
+  },
+  "devDependencies": {
+    "eslint-config-crowbar": "^0.1.0"
   }
 }

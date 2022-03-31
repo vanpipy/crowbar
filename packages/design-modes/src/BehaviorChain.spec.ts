@@ -58,11 +58,11 @@ it('iterate the queue of the sync functions and paused and throw the expected er
   chain.push(c);
 
   try {
-    await chain.execute()
+    await chain.execute();
   } catch (err: any) {
-    expect(err.message).to.eq('blocked')
+    expect(err.message).to.eq('blocked');
   }
-})
+});
 
 it('iterate the queue of the async functions and paused and throw the expected error', async () => {
   const a = async () => 10;
@@ -77,11 +77,11 @@ it('iterate the queue of the async functions and paused and throw the expected e
   chain.push(c);
 
   try {
-    await chain.execute()
+    await chain.execute();
   } catch (err: any) {
-    expect(err.message).to.eq('blocked')
+    expect(err.message).to.eq('blocked');
   }
-})
+});
 
 it('iterate the queue of the mixed functions and paused and throw the expected error', async () => {
   const a = () => 10;

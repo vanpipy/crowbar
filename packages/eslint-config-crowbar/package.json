@@ -1,0 +1,32 @@
+{
+  "name": "eslint-config-crowbar",
+  "version": "0.1.0",
+  "description": "customized typescript eslint config",
+  "keywords": [
+    "typescript",
+    "eslint",
+    "config"
+  ],
+  "author": "vanpipy <vanpipy@gmail.com>",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/eslint-config-crowbar#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpipy/crowbar.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vanpipy/crowbar/issues"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.6.1"
+  }
+}
