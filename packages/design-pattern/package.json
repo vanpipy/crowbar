@@ -1,13 +1,14 @@
 {
-  "name": "crowbar-design-modes",
+  "name": "crowbar-design-pattern",
   "version": "0.1.2",
-  "description": "design mode implement",
+  "description": "design pattern implement",
   "keywords": [
     "design",
+    "pattern",
     "implement"
   ],
   "author": "vanpipy <vanpipy@gmail.com>",
-  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/design-modes#readme",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/design-pattern#readme",
   "license": "MIT",
   "files": [
     "lib",
