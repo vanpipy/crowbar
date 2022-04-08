@@ -20,7 +20,7 @@
     "url": "git+https://github.com/vanpipy/crowbar.git"
   },
   "scripts": {
-    "test": "mocha --require ts-node/register 'lib/*.spec.*'",
+    "test": "mocha --require ts-node/register 'src/*.spec.*'",
     "build:cjs": "tsc -p ./tsconfig-cjs.json",
     "build:es": "tsc -p ./tsconfig-esm.json",
     "build": "npm run build:cjs && npm run build:es"
