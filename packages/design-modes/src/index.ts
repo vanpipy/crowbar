@@ -1,3 +1,3 @@
-import BehaviorChain  from './BehaviorChain';
+import BehaviorChain, { BREAK_SIGNAL } from './BehaviorChain';
 
-export { BehaviorChain }
+export { BehaviorChain, BREAK_SIGNAL };

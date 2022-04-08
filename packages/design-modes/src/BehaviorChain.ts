@@ -1,16 +1,20 @@
+type AnyObject = { [key: string]: any };
 type Mixed =
-  | string
+  | AnyObject
+  | AnyObject[]
   | number
+  | string
   | boolean
-  | undefined
-  | null
-  | object
-  | string[]
   | number[]
+  | string[]
   | boolean[]
-  | object[];
+  | null
+  | undefined
+  | void;
 
-type Processor = (value?: Mixed) => Promise<Mixed> | Mixed;
+type Processor = (value: Mixed) => Promise<Mixed> | Mixed;
+
+export const BREAK_SIGNAL = 'BREAK_SIGNAL';
 
 class BehaviorChain {
   private queues: Processor[] = [];
@@ -20,8 +24,10 @@ class BehaviorChain {
   }
 
   execute() {
-    const run = createRunner(this.queues);
-    return run();
+    if (this.queues.length) {
+      const run = createRunner(this.queues, this.destroy.bind(this));
+      return run();
+    }
   }
 
   destroy() {
@@ -29,7 +35,7 @@ class BehaviorChain {
   }
 }
 
-function createRunner(processors: Processor[]) {
+function createRunner(processors: Processor[], destroy: () => void) {
   let result: Mixed;
   const gen = runner();
 
@@ -53,11 +59,18 @@ function createRunner(processors: Processor[]) {
   function run(): Promise<Mixed> {
     const { done, value } = gen.next();
 
+    if (value === BREAK_SIGNAL) {
+      destroy();
+      return Promise.resolve(BREAK_SIGNAL);
+    }
+
     if (value instanceof Error) {
+      destroy();
       return Promise.reject(value);
     }
 
     if (done === true) {
+      destroy();
       return Promise.resolve(result);
     }
 
