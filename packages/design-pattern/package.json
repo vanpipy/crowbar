@@ -24,7 +24,8 @@
     "test": "mocha --require ts-node/register 'src/*.spec.*'",
     "build:cjs": "tsc -p ./tsconfig-cjs.json",
     "build:es": "tsc -p ./tsconfig-esm.json",
-    "build": "npm run build:cjs && npm run build:es"
+    "build": "npm run build:cjs && npm run build:es",
+    "prepublish": "npm run build && npm publish"
   },
   "bugs": {
     "url": "https://github.com/vanpipy/crowbar/issues"
