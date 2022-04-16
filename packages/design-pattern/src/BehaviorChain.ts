@@ -1,26 +1,13 @@
-type AnyObject = { [key: string]: any };
-type Mixed =
-  | AnyObject
-  | AnyObject[]
-  | number
-  | string
-  | boolean
-  | number[]
-  | string[]
-  | boolean[]
-  | null
-  | undefined
-  | void;
-
-type Processor = (value: Mixed) => Promise<Mixed> | Mixed;
+import Command, { Processor, Value } from './Command';
 
 export const BREAK_SIGNAL = 'BREAK_SIGNAL';
 
 class BehaviorChain {
-  private queues: Processor[] = [];
+  private queues: Command[] = [];
 
   push(processor: Processor) {
-    return this.queues.push(processor);
+    const command = new Command(processor);
+    return this.queues.push(command);
   }
 
   execute() {
@@ -35,19 +22,19 @@ class BehaviorChain {
   }
 }
 
-function createRunner(processors: Processor[], destroy: () => void) {
-  let result: Mixed;
+function createRunner(commands: Command[], destroy: () => void) {
+  let result: Value;
   const gen = runner();
 
   function* runner() {
-    const l = processors.length;
+    const l = commands.length;
     let i = 0;
 
     while (i < l) {
-      const processor = processors[i];
+      const command = commands[i];
 
       try {
-        yield processor(result);
+        yield command.execute(result);
       } catch (err) {
         yield err;
       }
@@ -56,7 +43,7 @@ function createRunner(processors: Processor[], destroy: () => void) {
     }
   }
 
-  function run(): Promise<Mixed> {
+  function run(): Promise<Value> {
     const { done, value } = gen.next();
 
     if (value === BREAK_SIGNAL) {
@@ -76,7 +63,7 @@ function createRunner(processors: Processor[], destroy: () => void) {
 
     return Promise.resolve(value).then((latest) => {
       if (done === false) {
-        result = latest as Mixed;
+        result = latest as Value;
         return run();
       }
     });
