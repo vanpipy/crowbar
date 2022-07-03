@@ -18,4 +18,14 @@ describe('Memo', () => {
     expect(memonried('it')).to.eq('it is a string')
     expect(memonried(true)).to.eq(undefined)
   })
+
+  it('should store the values when the function has been executed', () => {
+    const A = (x: any) => {
+      return x * 10
+    };
+    const memonried = memo(A);
+
+    memonried(1)
+    expect(memonried.__store.get(1)).to.eq(10)
+  })
 })

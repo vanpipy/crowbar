@@ -113,10 +113,9 @@ class Editor {
 }
 
 function memo (fn: Function) {
-  const result = new Map();
-
-  return (...args: any[]) => {
-    const key = args.join('-');
+  const memonried = function (...args: any[]) {
+    const result = memonried.__store;
+    const key = args.length > 1 ? args.join('0') : args[0];
     let value = result.get(key);
 
     if (!result.has(key)) {
@@ -126,6 +125,10 @@ function memo (fn: Function) {
 
     return value
   }
+
+  memonried.__store = new Map();
+
+  return memonried;
 }
 
 export default memo
