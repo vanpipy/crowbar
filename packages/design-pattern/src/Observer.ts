@@ -1,6 +1,9 @@
 /**
  * There is no doubt that the observer pattern is an event emitter.
  * But `Don't Repeat Yourself` is not for here, so let's go on.
+ *
+ * Observe something changing and then do something
+ * Subscribe the changing and get the the result of `do something`
  */
 class Subscriber {
   update() {
