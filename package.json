@@ -4,7 +4,8 @@
   "description": "just crowbar the applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bootstrap": "npm install && lerna bootstrap",
+    "test:design-pattern": "lerna run --scope=crowbar-design-pattern test"
   },
   "repository": {
     "type": "git",
