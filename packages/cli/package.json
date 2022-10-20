@@ -1,0 +1,35 @@
+{
+  "name": "crowbar-cli",
+  "version": "0.0.1",
+  "description": "crowbar command line interface",
+  "keywords": ["crowbar", "cli"],
+  "author": "vanpipy <vanpipy@gmail.com>",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/cli#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "bin": {
+    "crowbar": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpipy/crowbar.git"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "echo \"No test cases\""
+  },
+  "bugs": {
+    "url": "https://github.com/vanpipy/crowbar/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "commander": "^9.4.1",
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.0.0",
+    "eslint": "^8.23.1",
+    "lint-staged": "^13.0.3",
+    "husky": "^8.0.1"
+  }
+}
