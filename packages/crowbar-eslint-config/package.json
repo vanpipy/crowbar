@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-crowbar",
+  "name": "crowbar-eslint-config",
   "version": "0.1.0",
   "description": "customized typescript eslint config",
   "keywords": [
