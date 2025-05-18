@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-crowbar",
+  "name": "@crowbar/eslint-config",
   "version": "0.1.0",
   "description": "customized typescript eslint config",
   "keywords": [
@@ -26,7 +26,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "2.6.1"
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.5.3"
   }
 }
