@@ -1,5 +1,5 @@
 {
-  "name": "crowbar-design-pattern",
+  "name": "@crowbar/design-pattern",
   "version": "0.2.2",
   "description": "design pattern implement",
   "keywords": [
@@ -35,6 +35,6 @@
     "lib": "lib"
   },
   "devDependencies": {
-    "eslint-config-crowbar": "^0.1.0"
+    "eslint-config-crowbar": "*"
   }
 }
