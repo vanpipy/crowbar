@@ -65,7 +65,7 @@ describe('BehaviorChain', () => {
     }
   });
 
-  it('iterate the queue of the async functions and paused and throw the expected error', async () => {
+  it('iterate the queue of the async functions and paused with throwing the expected error', async () => {
     const a = async () => 10;
     const b = async () => {
       throw Error('blocked');
@@ -84,7 +84,7 @@ describe('BehaviorChain', () => {
     }
   });
 
-  it('iterate the queue of the mixed functions and paused and throw the expected error', async () => {
+  it('iterate the queue of the mixed functions and paused with throwing the expected error', async () => {
     const a = () => 10;
     const b = async () => {
       throw Error('blocked');
@@ -103,7 +103,7 @@ describe('BehaviorChain', () => {
     }
   });
 
-  it('iterate the queue and will jump out when got the break signal', async () => {
+  it('iterate the queue and end with the break signal directly', async () => {
     let i = 0;
 
     const a = async () => {
@@ -136,7 +136,7 @@ describe('BehaviorChain', () => {
     expect(i).to.eq(7);
   });
 
-  it('iterate the queue and destroy the queue after expected', async () => {
+  it('iterate the queue and destroy the queue after executed', async () => {
     let i = 0;
 
     const a = () => {
