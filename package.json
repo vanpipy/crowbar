@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/vanpipy/crowbar#readme",
   "devDependencies": {
+    "@crowbar/eslint-config": "workspace:*",
     "@types/chai": "^4.3.0",
     "@types/mocha": "^10.0.10",
     "@types/sinon": "^10.0.11",

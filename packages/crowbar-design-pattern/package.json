@@ -35,6 +35,6 @@
     "lib": "lib"
   },
   "devDependencies": {
-    "eslint-config-crowbar": "*"
+    "@crowbar/eslint-config": "workspace:*"
   }
 }
