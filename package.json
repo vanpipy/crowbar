@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "npm install && lerna bootstrap",
-    "test:design-pattern": "lerna run --scope=crowbar-design-pattern test",
+    "test:design-pattern": "lerna run --scope=@crowbar/design-pattern test",
     "prepare": "husky"
   },
   "repository": {
