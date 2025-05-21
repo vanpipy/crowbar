@@ -8,7 +8,7 @@
     "config"
   ],
   "author": "vanpipy <vanpipy@gmail.com>",
-  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/eslint-config-crowbar#readme",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/crowbar-eslint-config#readme",
   "license": "MIT",
   "main": "index.js",
   "repository": {

@@ -8,7 +8,7 @@
     "implement"
   ],
   "author": "vanpipy <vanpipy@gmail.com>",
-  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/design-pattern#readme",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/crowbar-design-pattern#readme",
   "license": "MIT",
   "files": [
     "lib",

@@ -1,6 +1,6 @@
-# `eslint-config-typescript`
+# `crowbar-eslint-config`
 
-> TODO: description
+An eslint config
 
 ## Usage
 

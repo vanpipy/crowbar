@@ -1,2 +1,3 @@
 # `design-pattern`
-Implement some design patterns
+
+Implement the design patterns
