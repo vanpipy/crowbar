@@ -1,0 +1,31 @@
+{
+  "name": "@crowbar/type-generator",
+  "version": "0.1.0",
+  "description": "generate type from the swagger",
+  "keywords": [
+    "types",
+    "generator"
+  ],
+  "author": "vanpipy <vanpipy@gmail.com>",
+  "homepage": "https://github.com/vanpipy/crowbar/tree/main/packages/crowbar-type-generator#readme",
+  "license": "MIT",
+  "main": "lib/crowbar-type-generator.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register 'src/*.spec.*'",
+    "build": "tsc -p ./tsconifg.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpipy/crowbar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanpipy/crowbar/issues"
+  },
+  "types": "./lib/index.d.ts",
+  "dependencies": {
+    "swagger-typescript-api": "^13.1.3"
+  }
+}
