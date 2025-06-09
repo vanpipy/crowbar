@@ -7,15 +7,15 @@ describe('Iterator', () => {
     const iterator = new ArrayIterator(arr);
 
     expect(iterator.hasMore()).toEqual(true);
-    expect(iterator.getNext()).toEqual(0);
+    expect(iterator.next()).toEqual(0);
     expect(iterator.hasMore()).toEqual(true);
-    expect(iterator.getNext()).toEqual(1);
+    expect(iterator.next()).toEqual(1);
     expect(iterator.hasMore()).toEqual(true);
-    expect(iterator.getNext()).toEqual(2);
+    expect(iterator.next()).toEqual(2);
     expect(iterator.hasMore()).toEqual(true);
-    expect(iterator.getNext()).toEqual(3);
+    expect(iterator.next()).toEqual(3);
     expect(iterator.hasMore()).toEqual(true);
-    expect(iterator.getNext()).toEqual(4);
+    expect(iterator.next()).toEqual(4);
   });
 
   it('should iterate an empty array and hasMore retrun false and getNext retrun null', () => {
@@ -23,7 +23,7 @@ describe('Iterator', () => {
     const iterator = new ArrayIterator(arr);
 
     expect(iterator.hasMore()).toEqual(false);
-    expect(iterator.getNext()).toEqual(null);
+    expect(iterator.next()).toEqual(null);
   });
 
   it('should iterate an array but get null when reach the index is out of the edge', () => {
@@ -31,7 +31,7 @@ describe('Iterator', () => {
     const iterator = new ArrayIterator(arr);
 
     expect(iterator.hasMore()).toEqual(true);
-    expect(iterator.getNext()).toEqual(0);
+    expect(iterator.next()).toEqual(0);
     expect(iterator.hasMore()).toEqual(false);
   });
 });
