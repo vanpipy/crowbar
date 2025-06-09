@@ -1,5 +1,5 @@
 /**
- * [Mediator Pattern](https://refactoring.guru/design-patterns/mediator)
+ * @see [Mediator Pattern](https://refactoring.guru/design-patterns/mediator)
  *
  * There is an important definition of the mediator that:
  * > Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between
@@ -15,4 +15,3 @@
  *
  * So coding a mediator without real stuff like building a house but no one in.
  */
-

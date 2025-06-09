@@ -1,4 +1,6 @@
 /**
+ * @see [Visitor Pattern](https://refactoring.guru/design-patterns/visitor)
+ *
  * The visitor pattern is not a method to show the way to solve a problem,
  * it is a solution to solve a problem indeed.
  *
@@ -11,8 +13,6 @@
  *
  * Using the decorator changes the pattern. A visitor is just a visitor and solves a problem indeed.
  */
-class Visitor {
+class Visitor {}
 
-}
-
-export default Visitor
+export default Visitor;
