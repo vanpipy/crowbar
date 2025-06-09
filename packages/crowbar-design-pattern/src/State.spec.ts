@@ -1,5 +1,5 @@
+import { expect } from '@jest/globals';
 import { State, StatePlayer } from './State';
-import { expect } from 'chai';
 
 describe('State Playgroud', () => {
   it('should have a ready state when the state has been created', () => {
@@ -40,16 +40,16 @@ describe('State Playgroud', () => {
     };
 
     player.changeState(E);
-    expect(player.state).to.eq(E);
+    expect(player.state).toEqual(E);
     E.goNext();
-    expect(player.state).to.eq(A);
+    expect(player.state).toEqual(A);
     A.goNext();
-    expect(player.state).to.eq(B);
+    expect(player.state).toEqual(B);
     B.goNext();
-    expect(player.state).to.eq(C);
+    expect(player.state).toEqual(C);
     C.goNext();
-    expect(player.state).to.eq(D);
+    expect(player.state).toEqual(D);
     D.goNext();
-    expect(player.state).to.eq(B);
+    expect(player.state).toEqual(B);
   });
 });

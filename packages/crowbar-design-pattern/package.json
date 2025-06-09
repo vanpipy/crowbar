@@ -21,7 +21,7 @@
     "url": "git+https://github.com/vanpipy/crowbar.git"
   },
   "scripts": {
-    "test": "mocha --require ts-node/register 'src/*.spec.*'",
+    "test": "jest --colors --silent=false --config=./jest.config.js",
     "build:cjs": "tsc -p ./tsconfig-cjs.json",
     "build:es": "tsc -p ./tsconfig-esm.json",
     "build": "npm run build:cjs && npm run build:es",

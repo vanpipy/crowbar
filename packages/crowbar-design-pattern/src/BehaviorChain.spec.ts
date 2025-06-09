@@ -1,5 +1,5 @@
+import { expect } from '@jest/globals';
 import BehaviorChain from './BehaviorChain';
-import { expect } from 'chai';
 
 describe('BehaviorChain', () => {
   it('iterate the queue of the sync functions', async () => {
@@ -13,7 +13,7 @@ describe('BehaviorChain', () => {
     chain.push(c);
 
     const actul = await chain.execute();
-    expect(actul).to.eq(30);
+    expect(actul).toEqual(30);
   });
 
   it('iterate the queue of the async functions', async () => {
@@ -27,7 +27,7 @@ describe('BehaviorChain', () => {
     chain.push(c);
 
     const actul = await chain.execute();
-    expect(actul).to.eq(30);
+    expect(actul).toEqual(30);
   });
 
   it('iterate the queue of the mixed functions', async () => {
@@ -43,7 +43,7 @@ describe('BehaviorChain', () => {
     chain.push(d);
 
     const actul = await chain.execute();
-    expect(actul).to.eq(300);
+    expect(actul).toEqual(300);
   });
 
   it('iterate the queue of the sync functions and paused and throw the expected error', async () => {
@@ -61,7 +61,7 @@ describe('BehaviorChain', () => {
     try {
       await chain.execute();
     } catch (err: any) {
-      expect(err?.message).to.eq('blocked');
+      expect(err?.message).toEqual('blocked');
     }
   });
 
@@ -80,7 +80,7 @@ describe('BehaviorChain', () => {
     try {
       await chain.execute();
     } catch (err: any) {
-      expect(err?.message).to.eq('blocked');
+      expect(err?.message).toEqual('blocked');
     }
   });
 
@@ -99,7 +99,7 @@ describe('BehaviorChain', () => {
     try {
       await chain.execute();
     } catch (err: any) {
-      expect(err?.message).to.eq('blocked');
+      expect(err?.message).toEqual('blocked');
     }
   });
 
@@ -133,7 +133,7 @@ describe('BehaviorChain', () => {
 
     await main();
 
-    expect(i).to.eq(7);
+    expect(i).toEqual(7);
   });
 
   it('iterate the queue and destroy the queue after executed', async () => {
@@ -151,6 +151,6 @@ describe('BehaviorChain', () => {
     await chain.execute();
     await chain.execute();
 
-    expect(i).to.eq(1);
+    expect(i).toEqual(1);
   });
 });

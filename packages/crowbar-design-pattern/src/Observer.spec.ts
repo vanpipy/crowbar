@@ -1,13 +1,12 @@
+import { expect, jest } from '@jest/globals';
 import Observer, { Subscriber } from './Observer';
-import sinon from 'sinon';
-import { expect } from 'chai';
 
 describe('Observer', () => {
-  const test = sinon.spy();
+  const test = jest.fn();
 
   class Demo implements Subscriber {
     update() {
-      test()
+      test();
     }
   }
 
@@ -15,27 +14,27 @@ describe('Observer', () => {
   const observer = new Observer();
 
   it('should subscribe an event successfully', () => {
-    observer.subscribe('test', A)
-    observer.notify('test')
-    expect(test.callCount).to.eq(1)
-  })
+    observer.subscribe('test', A);
+    observer.notify('test');
+    expect(test).toHaveBeenCalledTimes(1);
+  });
 
   it('should subscribe multiple events successfully', () => {
     const B = new Demo();
-    observer.subscribe('test', B)
-    observer.notify('test')
-    expect(test.callCount).to.eq(3)
-  })
+    observer.subscribe('test', B);
+    observer.notify('test');
+    expect(test).toHaveBeenCalledTimes(3);
+  });
 
   it('should not subscribe the same subscriber again', () => {
-    observer.subscribe('test', A)
-    observer.notify('test')
-    expect(test.callCount).to.eq(5)
-  })
+    observer.subscribe('test', A);
+    observer.notify('test');
+    expect(test).toHaveBeenCalledTimes(5);
+  });
 
   it('should unsubscribe an event successfully', () => {
-    observer.unsubscribe('test', A)
-    observer.notify('test')
-    expect(test.callCount).to.eq(6)
-  })
-})
+    observer.unsubscribe('test', A);
+    observer.notify('test');
+    expect(test).toHaveBeenCalledTimes(6);
+  });
+});
