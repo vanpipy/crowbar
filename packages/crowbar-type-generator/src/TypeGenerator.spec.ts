@@ -1,4 +1,5 @@
 import { describe, expect, it, jest, beforeEach } from '@jest/globals';
+import { writeFile } from 'fs/promises';
 import { swaggerGenerate } from './helper';
 import TypeGenerator from './TypeGenerator';
 
@@ -82,10 +83,11 @@ describe('TypeGenerator', () => {
     });
   });
 
-  it('should set a transformer to transform the data', async () => {
-    const transform = jest.fn<any>();
+  it('should transform the data via a transformer passed', async () => {
+    const transform = jest.fn<any>().mockImplementation(() => ({ a: 2 }));
     const typeGenerator = new TypeGenerator({ uri: 'https://domain', transform });
     await typeGenerator.generate();
     expect(transform).toHaveBeenCalledWith({ a: 1 });
+    expect(writeFile).toHaveBeenCalledWith(`${cwd}/.temp-0.json`, JSON.stringify({ a: 2 }));
   });
 });
